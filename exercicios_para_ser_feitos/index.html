@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript para Back-end</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <h1>JavaScript para Back-end</h1>
+
+    <div class="card">
+        <h2 class="accordion-button">Título e Boas-Vindas ao Tema</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Título:</strong>JavaScript para Back-end</li>
+                <li>Bem-vindos!</li>
+                <li><strong>Objetivo:</strong> Fazer uma revisão de JavaScript.</li>
+                <li><strong>Foco:</strong> Usar JavaScript como uma ferramenta para o desenvolvimento de APIs.</li>
+                <li><strong>Atenção:</strong> Não é um curso completo de JavaScript, aprofundaremos apenas nos detalhes
+                    que utilizaremos nas próximas aulas.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Por Que JavaScript no Back-end?</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Popularidade do JavaScript no Front-end:</strong>
+                    <ul>
+                        <li>Essencial para dar interatividade às páginas web (validação de formulários, animações,
+                            transições).</li>
+                        <li>Tradicionalmente usado do lado do cliente (o que vemos no navegador).</li>
+                    </ul>
+                </li>
+                <li><strong>A Transição para o Back-end:</strong>
+                    <ul>
+                        <li>Inicialmente, JavaScript não foi desenvolvido para o lado do servidor; linguagens como
+                            <code>Java</code>, <code>Python</code> e <code>Ruby</code> dominavam.
+                        </li>
+                        <li>Surgimento do <strong>Node.js</strong>: Uma plataforma que permite a execução de JavaScript
+                            do lado do servidor.</li>
+                        <li>Unificação do Desenvolvimento Web: Possibilitou que programadores de front-end e back-end
+                            utilizassem uma linguagem só.</li>
+                        <li><strong>Benefícios:</strong> Facilita a colaboração, aumenta a eficiência, simplicidade e
+                            coesão do projeto.</li>
+                    </ul>
+                </li>
+                <li><strong>JavaScript sem HTML:</strong> Aprenderemos a trabalhar com JavaScript e executá-lo sem
+                    precisar de uma estrutura de página HTML.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Características Essenciais da Linguagem JavaScript</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Linguagem Interpretada:</strong>
+                    <ul>
+                        <li>Não é compilada como outras linguagens.</li>
+                        <li>É interpretada por um interpretador, instrução por instrução, durante a execução.</li>
+                        <li>Geralmente, linguagens interpretadas têm um tempo de execução mais rápido.</li>
+                    </ul>
+                </li>
+                <li><strong>Linguagem Multiparadigma:</strong>
+                    <ul>
+                        <li>Permite organizar e montar programas de diversas formas.</li>
+                        <li>Exemplos: Orientação a Objeto, Estruturada, entre outros.</li>
+                        <li>É importante escolher um paradigma e manter a coesão no sistema.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Tipos de Dados em JavaScript</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Numéricos:</strong> Representam valores numéricos.</li>
+                <li><strong>String:</strong> Sequência de caracteres.</li>
+                <li><strong>Booleanos:</strong> Valores lógicos (<code>true</code> ou <code>false</code>).</li>
+                <li><strong>Array:</strong> Uma lista de valores.</li>
+                <li><strong>Object:</strong> Uma coleção de pares chave-valor.</li>
+                <li><strong>undefined:</strong> Variável declarada, mas sem valor.</li>
+                <li><strong>null:</strong> Ausência intencional de valor.</li>
+            </ul>
+            <div class="code-example">
+                <pre><code><span class="token-comment">// Exemplo de Tipos de Dados</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">nome</span> <span class="token-operator">=</span> <span class="token-string">"Alice"</span><span class="token-punctuation">;</span>       <span class="token-comment">// String</span>
+<span class="token-keyword">let</span> <span class="token-variable">idade</span> <span class="token-operator">=</span> <span class="token-number">30</span><span class="token-punctuation">;</span>            <span class="token-comment">// Number</span>
+<span class="token-keyword">let</span> <span class="token-variable">aprovada</span> <span class="token-operator">=</span> <span class="token-boolean">true</span><span class="token-punctuation">;</span>        <span class="token-comment">// Boolean</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">hobbies</span> <span class="token-operator">=</span> <span class="token-punctuation">[</span><span class="token-string">"leitura"</span><span class="token-punctuation">,</span> <span class="token-string">"corrida"</span><span class="token-punctuation">,</span> <span class="token-string">"código"</span><span class="token-punctuation">];</span> <span class="token-comment">// Array</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">contato</span> <span class="token-operator">=</span> <span class="token-punctuation">{</span>           <span class="token-comment">// Object</span>
+  <span class="token-string">email</span><span class="token-operator">:</span> <span class="token-string">"alice@example.com"</span><span class="token-punctuation">,</span>
+  <span class="token-string">telefone</span><span class="token-operator">:</span> <span class="token-boolean">null</span>      <span class="token-comment">// null: telefone não fornecido</span>
+<span class="token-punctuation">};</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">sobrenome</span><span class="token-punctuation">;</span>             <span class="token-comment">// undefined</span>
+
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-keyword">typeof</span> <span class="token-variable">nome</span><span class="token-punctuation">);</span>     <span class="token-comment">// "string"</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-keyword">typeof</span> <span class="token-variable">idade</span><span class="token-punctuation">);</span>    <span class="token-comment">// "number"</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-keyword">typeof</span> <span class="token-variable">contato</span><span class="token-punctuation">);</span>   <span class="token-comment">// "object"</span></code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Declaração de Variáveis e Constantes</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Tipagem Dinâmica:</strong>
+                    <ul>
+                        <li>JavaScript não é uma linguagem fortemente tipada.</li>
+                        <li>Você não precisa declarar o tipo da variável (ex: <code>let string nome</code>).</li>
+                        <li>O JavaScript infere o tipo com base no valor atribuído (ex: <code>let idade = 25</code>
+                            infere numérico).</li>
+                        <li>Pode causar problemas em alguns momentos, mas há conversão de tipos.</li>
+                    </ul>
+                </li>
+                <li><strong>Declaração de Variáveis:</strong>
+                    <ul>
+                        <li><code>let</code>: Utilizado para declarar variáveis que podem ter seu valor alterado.
+                            <ul>
+                                <li>Possui escopo de bloco (a variável é reconhecida apenas dentro do bloco onde foi
+                                    declarada).</li>
+                                <li>Exemplo: <code>let nome = "João";</code>.</li>
+                            </ul>
+                        </li>
+                        <li><code>var</code>: Embora funcione, é desaconselhável devido à complexidade de seu escopo e
+                            não será usado no curso.</li>
+                    </ul>
+                </li>
+                <li><strong>Declaração de Constantes:</strong>
+                    <ul>
+                        <li><code>const</code>: Utilizado para declarar valores que não vão mudar após a atribuição
+                            inicial.
+                            <ul>
+                                <li>Exemplo: <code>const PI = 3.14;</code>.</li>
+                                <li>Impede que outras partes do programa alterem o valor.</li>
+                                <li>Útil para valores como CPF ou IDs que não devem ser modificados.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="code-example">
+                <pre><code><span class="token-comment">// Exemplo de let e const</span>
+
+<span class="token-comment">// Usando let para uma variável que pode ser alterada</span>
+<span class="token-keyword">let</span> <span class="token-variable">contador</span> <span class="token-operator">=</span> <span class="token-number">10</span><span class="token-punctuation">;</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Valor inicial:'</span><span class="token-punctuation">,</span> <span class="token-variable">contador</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: Valor inicial: 10</span>
+
+<span class="token-variable">contador</span> <span class="token-operator">=</span> <span class="token-number">20</span><span class="token-punctuation">;</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Valor alterado:'</span><span class="token-punctuation">,</span> <span class="token-variable">contador</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: Valor alterado: 20</span>
+
+<span class="token-comment">// Usando const para uma constante que não pode ser alterada</span>
+<span class="token-keyword">const</span> <span class="token-variable">TAXA_FIXA</span> <span class="token-operator">=</span> <span class="token-number">0.05</span><span class="token-punctuation">;</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Taxa fixa:'</span><span class="token-punctuation">,</span> <span class="token-variable">TAXA_FIXA</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: Taxa fixa: 0.05</span>
+
+<span class="token-comment">// A linha abaixo causaria um erro, pois não se pode reatribuir uma constante</span>
+<span class="token-comment">// TAXA_FIXA = 0.10; // TypeError: Assignment to constant variable.</span></code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Operadores Aritméticos e de Atribuição</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Operadores Aritméticos Básicos:</strong>
+                    <ul>
+                        <li><code>+</code> (Adição)</li>
+                        <li><code>-</code> (Subtração)</li>
+                        <li><code>*</code> (Multiplicação)</li>
+                        <li><code>/</code> (Divisão)</li>
+                        <li><code>%</code> (Módulo): Devolve o resto de uma divisão inteira.
+                            <ul>
+                                <li>Útil para verificar se um número é par ou ímpar (resto 0 para par, diferente de 0
+                                    para ímpar).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Operador de Inversão de Sinal:</strong>
+                    <ul>
+                        <li><code>-</code> (unário): Colocado na frente de uma variável, inverte seu sinal (positivo
+                            vira negativo, e vice-versa).</li>
+                    </ul>
+                </li>
+                <li><strong>Operadores de Incremento e Decremento:</strong>
+                    <ul>
+                        <li><code>++</code> (Incremento): Aumenta o valor da variável em 1.</li>
+                        <li><code>--</code> (Decremento): Diminui o valor da variável em 1.</li>
+                        <li>Pré-fixado (<code>++variavel</code> / <code>--variavel</code>): Incrementa/decrementa antes
+                            de usar o valor da variável.</li>
+                        <li>Pós-fixado (<code>variavel++</code> / <code>variavel--</code>): Usa o valor da variável e
+                            depois incrementa/decrementa.</li>
+                    </ul>
+                </li>
+                <li><strong>Operador de Atribuição:</strong>
+                    <ul>
+                        <li><code>=</code> (Igual): Atribui um valor a uma variável (ex: <code>nome = "João"</code>).
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="code-example">
+                <pre><code><span class="token-comment">// Exemplo de Operadores Aritméticos e de Atribuição</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">a</span> <span class="token-operator">=</span> <span class="token-number">10</span><span class="token-punctuation">;</span>
+<span class="token-keyword">let</span> <span class="token-variable">b</span> <span class="token-operator">=</span> <span class="token-number">5</span><span class="token-punctuation">;</span>
+
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Soma:'</span><span class="token-punctuation">,</span> <span class="token-variable">a</span> <span class="token-operator">+</span> <span class="token-variable">b</span><span class="token-punctuation">);</span>          <span class="token-comment">// Saída: Soma: 15</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Subtração:'</span><span class="token-punctuation">,</span> <span class="token-variable">a</span> <span class="token-operator">-</span> <span class="token-variable">b</span><span class="token-punctuation">);</span>       <span class="token-comment">// Saída: Subtração: 5</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Multiplicação:'</span><span class="token-punctuation">,</span> <span class="token-variable">a</span> <span class="token-operator">*</span> <span class="token-variable">b</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: Multiplicação: 50</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Divisão:'</span><span class="token-punctuation">,</span> <span class="token-variable">a</span> <span class="token-operator">/</span> <span class="token-variable">b</span><span class="token-punctuation">);</span>         <span class="token-comment">// Saída: Divisão: 2</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Módulo:'</span><span class="token-punctuation">,</span> <span class="token-variable">a</span> <span class="token-operator">%</span> <span class="token-variable">b</span><span class="token-punctuation">);</span>          <span class="token-comment">// Saída: Módulo: 0</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">c</span> <span class="token-operator">=</span> <span class="token-number">20</span><span class="token-punctuation">;</span>
+<span class="token-variable">c</span> <span class="token-operator">+=</span> <span class="token-number">10</span><span class="token-punctuation">;</span> <span class="token-comment">// Equivalente a: c = c + 10</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Atribuição com soma:'</span><span class="token-punctuation">,</span> <span class="token-variable">c</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: Atribuição com soma: 30</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">d</span> <span class="token-operator">=</span> <span class="token-number">5</span><span class="token-punctuation">;</span>
+<span class="token-variable">d</span><span class="token-operator">++</span><span class="token-punctuation">;</span> <span class="token-comment">// Incremento</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Incremento:'</span><span class="token-punctuation">,</span> <span class="token-variable">d</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: Incremento: 6</span>
+</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Operadores Lógicos e de Comparação</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Operadores Lógicos (Retornam <code>true</code> ou <code>false</code>):</strong>
+                    <ul>
+                        <li><code>==</code> (Igualdade): Verifica se os valores são iguais.</li>
+                        <li><code>!=</code> (Diferença): Verifica se os valores são diferentes.</li>
+                        <li><code>===</code> (Identidade): Verifica se os valores são iguais E do mesmo tipo.</li>
+                        <li><code>!==</code> (Não Identidade): Verifica se os valores não são idênticos (ou não são
+                            iguais, ou não são do mesmo tipo, ou ambos).</li>
+                    </ul>
+                </li>
+                <li><strong>Operadores de Comparação de Grandeza:</strong>
+                    <ul>
+                        <li><code>></code> (Maior que)</li>
+                        <li><code>>=</code> (Maior ou igual a)</li>
+                        <li><code><</code> (Menor que)</li>
+                        <li><code><=</code> (Menor ou igual a)</li>
+                        <li>Podem ser usados em estruturas condicionais.</li>
+                    </ul>
+                </li>
+                <li><strong>Operadores Lógicos (Booleanos):</strong>
+                    <ul>
+                        <li><code>&&</code> (AND): Retorna verdadeiro se ambas as expressões forem verdadeiras.</li>
+                        <li><code>||</code> (OR): Retorna verdadeiro se pelo menos uma das expressões for verdadeira.
+                        </li>
+                        <li><code>!</code> (NOT): Inverte o valor lógico (verdadeiro vira falso, e vice-versa).</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="code-example">
+                <pre><code><span class="token-comment">// Exemplo de Operadores Lógicos e de Comparação</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">x</span> <span class="token-operator">=</span> <span class="token-number">5</span><span class="token-punctuation">;</span>
+<span class="token-keyword">let</span> <span class="token-variable">y</span> <span class="token-operator">=</span> <span class="token-string">'5'</span><span class="token-punctuation">;</span>
+
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Igualdade (==):'</span><span class="token-punctuation">,</span> <span class="token-variable">x</span> <span class="token-operator">==</span> <span class="token-variable">y</span><span class="token-punctuation">);</span>   <span class="token-comment">// Saída: true (compara apenas o valor)</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Identidade (===):'</span><span class="token-punctuation">,</span> <span class="token-variable">x</span> <span class="token-operator">===</span> <span class="token-variable">y</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: false (compara valor e tipo)</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">idade</span> <span class="token-operator">=</span> <span class="token-number">20</span><span class="token-punctuation">;</span>
+<span class="token-keyword">let</span> <span class="token-variable">temCNH</span> <span class="token-operator">=</span> <span class="token-boolean">true</span><span class="token-punctuation">;</span>
+
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Pode dirigir? (AND):'</span><span class="token-punctuation">,</span> <span class="token-variable">idade</span> <span class="token-operator">></span> <span class="token-number">18</span> <span class="token-operator">&&</span> <span class="token-variable">temCNH</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: true</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'É maior de idade ou tem CNH? (OR):'</span><span class="token-punctuation">,</span> <span class="token-variable">idade</span> <span class="token-operator">></span> <span class="token-number">18</span> <span class="token-operator">||</span> <span class="token-variable">temCNH</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: true</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-string">'Não é maior de idade? (NOT):'</span><span class="token-punctuation">,</span> <span class="token-operator">!</span><span class="token-punctuation">(</span><span class="token-variable">idade</span> <span class="token-operator">></span> <span class="token-number">18</span><span class="token-punctuation">)</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: false</span>
+</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Conversão de Tipos (Type Conversion)</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Conversão Automática (Implícita):</strong>
+                    <ul>
+                        <li>Na maioria dos casos, JavaScript tenta converter tipos automaticamente.</li>
+                        <li>Exemplo: Ao concatenar uma string com um número (<code>"O número é " + 42</code>), o número
+                            é convertido para string.</li>
+                    </ul>
+                </li>
+                <li><strong>Conversão Explícita:</strong>
+                    <ul>
+                        <li>Podemos forçar a conversão usando funções específicas:</li>
+                        <li><code>Number()</code>: Converte um valor para o tipo numérico.
+                            <ul>
+                                <li>Exemplo: <code>Number("123")</code> transforma a string "123" no número 123.</li>
+                            </ul>
+                        </li>
+                        <li><code>String()</code>: Converte um valor para o tipo string.
+                            <ul>
+                                <li>Alternativa: Método <code>.toString()</code> (ex: <code>numero.toString()</code>).
+                                </li>
+                            </ul>
+                        </li>
+                        <li><code>Boolean()</code>: Converte um valor para o tipo booleano.</li>
+                    </ul>
+                </li>
+                <li>JavaScript oferece várias formas de realizar a mesma tarefa.</li>
+            </ul>
+            <div class="code-example">
+                <pre><code><span class="token-comment">// Exemplo de Conversão de Tipos</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">stringNumero</span> <span class="token-operator">=</span> <span class="token-string">"123"</span><span class="token-punctuation">;</span>
+<span class="token-keyword">let</span> <span class="token-variable">numeroConvertido</span> <span class="token-operator">=</span> <span class="token-function">Number</span><span class="token-punctuation">(</span><span class="token-variable">stringNumero</span><span class="token-punctuation">);</span> <span class="token-comment">// Converte string para número</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-keyword">typeof</span> <span class="token-variable">numeroConvertido</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: "number"</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">numeroOriginal</span> <span class="token-operator">=</span> <span class="token-number">456</span><span class="token-punctuation">;</span>
+<span class="token-keyword">let</span> <span class="token-variable">stringConvertida</span> <span class="token-operator">=</span> <span class="token-function">String</span><span class="token-punctuation">(</span><span class="token-variable">numeroOriginal</span><span class="token-punctuation">);</span> <span class="token-comment">// Converte número para string</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-keyword">typeof</span> <span class="token-variable">stringConvertida</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: "string"</span>
+
+<span class="token-keyword">let</span> <span class="token-variable">valorFalso</span> <span class="token-operator">=</span> <span class="token-number">0</span><span class="token-punctuation">;</span>
+<span class="token-keyword">let</span> <span class="token-variable">booleanoConvertido</span> <span class="token-operator">=</span> <span class="token-function">Boolean</span><span class="token-punctuation">(</span><span class="token-variable">valorFalso</span><span class="token-punctuation">);</span> <span class="token-comment">// Converte 0 para false</span>
+<span class="token-function">console</span><span class="token-punctuation">.</span><span class="token-function">log</span><span class="token-punctuation">(</span><span class="token-variable">booleanoConvertido</span><span class="token-punctuation">);</span> <span class="token-comment">// Saída: false</span></code></pre>
+            </div>
+        </div>
+    </div>
+
+    <h1>Continuação do JavaScript</h1>
+
+    <div class="card">
+        <h2 class="accordion-button">Boas-Vindas</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Título:</strong> Continuação do JavaScript</li>
+                <li>Bem-vindos!</li>
+                <li><strong>Objetivo:</strong> Continuar explorando o JavaScript para abordar tópicos importantes para
+                    as atividades futuras do curso.</li>
+                <li>Esta unidade finaliza a revisão sobre JavaScript, preparando para as próximas etapas mais práticas.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Estruturas de Decisão</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Conceito Geral:</strong> As estruturas de decisão em JavaScript são muito similares a outras
+                    linguagens de programação.</li>
+                <li><strong>if/else:</strong>
+                    <ul>
+                        <li>Permite executar um bloco de código de acordo com uma condição.</li>
+                        <li>Exemplo básico de verificação de igualdade/diferença.</li>
+                    </ul>
+                </li>
+                <li><strong>else if:</strong>
+                    <ul>
+                        <li>Permite fazer múltiplas verificações em sequência.</li>
+                        <li>Apenas um <code>else</code> é permitido por bloco de <code>if</code>.</li>
+                    </ul>
+                </li>
+                <li><strong>Operador Ternário:</strong>
+                    <ul>
+                        <li>Forma resumida de <code>if/else</code> em uma única linha/expressão.</li>
+                        <li>Útil para inicializar variáveis com base em uma condição.</li>
+                    </ul>
+                </li>
+                <li><strong>switch/case:</strong>
+                    <ul>
+                        <li>Presente em JavaScript, similar a Java e C++. (Não disponível em Python, por exemplo.)</li>
+                        <li>Testa uma variável contra várias possibilidades (casos).</li>
+                        <li>Usa <code>break</code> para sair da estrutura após um caso verdadeiro.</li>
+                        <li>Permite usar strings nos casos (diferente de algumas outras linguagens).</li>
+                        <li><code>default</code>: Bloco executado se nenhum caso for compatível.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Estruturas de Repetição (Laços)</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>while (enquanto):</strong>
+                    <ul>
+                        <li>Executa um bloco de código enquanto uma condição lógica for verdadeira.</li>
+                        <li>A condição é verificada antes da primeira execução do bloco.</li>
+                        <li>Exemplo: Incremento de contador até uma condição ser falsa.</li>
+                    </ul>
+                </li>
+                <li><strong>do/while (faça/enquanto):</strong>
+                    <ul>
+                        <li>A diferença principal: o bloco de código será executado pelo menos uma vez, antes da
+                            condição ser verificada.</li>
+                    </ul>
+                </li>
+                <li><strong>for (para):</strong>
+                    <ul>
+                        <li>Usado quando se sabe quantas vezes um trecho de código precisa ser executado.</li>
+                        <li>Estrutura: inicialização de variável, condição, e incremento (não necessariamente de 1 em
+                            1).</li>
+                        <li>Observação: Muitas vezes, <code>for</code> e <code>while</code> podem ser usados para o
+                            mesmo propósito, dependendo da avaliação do desenvolvedor.</li>
+                    </ul>
+                </li>
+                <li><strong>for...of:</strong>
+                    <ul>
+                        <li>Utilizado para iterar sobre elementos iteráveis, como arrays.</li>
+                        <li>Retorna o valor de cada elemento na iteração.</li>
+                    </ul>
+                </li>
+                <li><strong>for...in:</strong>
+                    <ul>
+                        <li>Utilizado para iterar sobre as propriedades (atributos/chaves) de um objeto.</li>
+                        <li>Retorna o nome da chave/propriedade em cada iteração, permitindo acessar o valor do objeto
+                            via <code>objeto[chave]</code>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Funções</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Funções em JavaScript:</strong> Essenciais e existem várias formas de declará-las, focaremos
+                    nas mais comuns.</li>
+                <li><strong>Declaração com <code>function</code> (Palavra Reservada):</strong>
+                    <ul>
+                        <li>Sintaxe: <code>function nomeDaFuncao(parametro1, parametro2) { // bloco de código }</code>.
+                        </li>
+                        <li>Parâmetros não precisam ter seus tipos especificados em JavaScript (linguagem de tipagem
+                            dinâmica).</li>
+                        <li>Exemplo: Função <code>saudacao(nome)</code> que imprime "Olá [nome]".</li>
+                        <li>Como Chamar: <code>saudacao("João")</code>.</li>
+                    </ul>
+                </li>
+                <li><strong>Funções como Expressões (Atribuídas a Variáveis/Constantes):</strong>
+                    <ul>
+                        <li>Sintaxe: <code>const nomeDaFuncao = function(parametro1) { // bloco de código }</code>.</li>
+                        <li>Pode usar <code>const</code> (para função inalterável) ou <code>let</code> (para função que
+                            pode ser reatribuída).</li>
+                        <li>Comportamento da função é o mesmo; a diferença é a forma de declaração e o
+                            escopo/mutabilidade.</li>
+                        <li>Como Chamar: <code>nomeDaFuncao("Valor")</code> (igual à forma anterior).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Objetos</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Objetos em JavaScript:</strong> Também podem ser criados de diversas formas; veremos as duas
+                    mais comuns.</li>
+                <li><strong>Declaração por Literal de Objeto (Mais Simples):</strong>
+                    <ul>
+                        <li>Sintaxe:
+                            <code>let pessoa = { nome: "João", idade: 25, cumprimentar: function() { console.log("Olá!"); } }</code>.
+                        </li>
+                        <li>Usa chaves <code>{}</code> para definir propriedades (atributos) e métodos (funções).</li>
+                        <li>Acesso a Propriedades: <code>pessoa.nome</code> (retorna "João").</li>
+                        <li>Chamada de Métodos: <code>pessoa.cumprimentar()</code>.</li>
+                    </ul>
+                </li>
+                <li><strong>Declaração com Construtor de Objetos (Função Construtora):</strong>
+                    <ul>
+                        <li>Cria uma função que serve como "molde" para múltiplos objetos do mesmo tipo.</li>
+                        <li>Sintaxe da Função Construtora:
+                            <code>function Pessoa(nome, idade) { this.nome = nome; this.idade = idade; }</code>.
+                        </li>
+                        <li>Uso de <code>this</code> para referenciar a propriedade do objeto que está sendo criado,
+                            distinguindo-o do parâmetro da função.</li>
+                        <li>Instanciando o Objeto: <code>let pessoa1 = new Pessoa("Maria", 30);</code>.</li>
+                        <li>Essa forma é útil ao criar vários objetos do mesmo tipo.</li>
+                    </ul>
+                </li>
+                <li><strong>Observação:</strong> Existem outras formas de criar objetos em JavaScript, e é recomendado
+                    pesquisar para conhecimento adicional.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Conclusão</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Recapitulando:</strong>
+                    <ul>
+                        <li>Revisamos o JavaScript como ferramenta para APIs no back-end, habilitado pelo Node.js.</li>
+                        <li>Exploramos suas características como linguagem interpretada e multiparadigma.</li>
+                        <li>Vimos tipos de dados, declaração de variáveis (<code>let</code>, <code>const</code>),
+                            operadores e conversão de tipos.</li>
+                        <li>Concluímos a revisão de JavaScript, abordando estruturas de decisão, repetição, funções e
+                            objetos.</li>
+                    </ul>
+                </li>
+                <li><strong>Importância:</strong> Esta revisão é de suma importância para a execução das atividades
+                    futuras.</li>
+
+                <li><strong>Atividades:</strong> Não deixem de realizar as atividades para assimilar e fixar o conteúdo
+                    ministrado nas aulas.</li>
+                <li>Vejo vocês na próxima aula, onde começaremos a desenvolver APIs juntos!</li>
+
+
+                <li><strong>Complementar:</strong>
+                    <ul>
+                        <li>A leitura sobre linguagens interpretadas é crucial para um conhecimento aprofundado em
+                            programação.</li>
+                        <li>Consulte o livro de referência de JavaScript indicado para sanar dúvidas e aprofundar.</li>
+                    </ul>
+                </li>
+                <li><a href="atividade.html" class="btn-nav">Ir para Atividades</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

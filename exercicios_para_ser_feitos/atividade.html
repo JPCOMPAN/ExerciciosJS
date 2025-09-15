@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuação do JavaScript</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <h1>Atividade prática de JavaScript para laboratório</h1>
+
+    <div class="card">
+        <h2 class="accordion-button">Cultura Maker e Aprendizado Ativo</h2>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Título:</strong> Mão na Massa: Desenvolvendo com Propósito</li>
+                <li>Vamos trabalhar em duplas (ou trios), fomentando a colaboração e a troca de conhecimento.</li>
+                <li><strong>Objetivo:</strong> Aprender fazendo, construindo soluções para problemas reais.</li>
+                <li>Nossa abordagem será baseada em projetos e desafios práticos, estimulando a criatividade e a
+                    autonomia.</li>
+                <li><strong>Foco:</strong> Nesta etapa inicial do curso, resolveremos problemas que nos preparam para o
+                    desenvolvimento de APIs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 class="accordion-button">Laboratório JavaScript: 10 Ideias de Projetos "Maker"</h2>
+        <div class="accordion-content">
+            <p>Aqui estão 10 propostas de atividades práticas para uma aula de revisão de JavaScript, desenhadas para
+                serem resolvidas inteiramente no navegador.
+                O objetivo é fortalecer os fundamentos da linguagem que são essenciais para o back-end.</p>
+
+            <ul>
+                <h3>1. Contador Regressivo</h3>
+                <li>
+                    <ul>
+                        <li><strong>O Desafio:</strong> Criar uma função que calcula e exibe quantos dias,
+                            horas,
+                            minutos
+                            e segundos faltam para uma data futura (por exemplo, o próximo Ano Novo).</li>
+                        <li><strong>Conceitos de JS em Foco:</strong> Funções, manipulação do objeto Date, operadores
+                            matemáticos
+                            para converter milissegundos em outras unidades de tempo.</li>
+                        <li><strong>Exemplo de Saída no Console:</strong> Faltam: 250 dias, 10 horas, 5 minutos, 15
+                            segundos.</li>
+                    </ul>
+                </li>
+
+
+                <h3>2. Calculadora de IMC (Índice de Massa Corporal)</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Desenvolver uma função <code>calcularIMC(peso, altura)</code> que
+                            recebe
+                            o
+                            peso (em kg) e a altura (em metros) de uma pessoa. A função deve calcular o IMC e retornar
+                            uma
+                            string
+                            indicando o valor e a classificação (ex: "Abaixo do peso", "Peso normal", "Sobrepeso").</p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Funções com parâmetros e retorno, operadores
+                            matemáticos, e
+                            estruturas condicionais (if, else if, else) para determinar a classificação.</p>
+                    </li>
+                    <li>
+                        <p><strong>Exemplo de Chamada:</strong> <code>console.log(calcularIMC(70, 1.75))</code></p>
+                    </li>
+                </ul>
+
+
+                <h3>3. Tabuada Dinâmica</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Criar uma função <code>gerarTabuada(numero)</code> que recebe um
+                            número
+                            como
+                            parâmetro e imprime no console a sua tabuada de 1 a 10.</p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Estruturas de repetição (for), funções com
+                            parâmetros,
+                            operadores matemáticos e template literals para formatar a saída.</p>
+                    </li>
+                </ul>
+
+
+                <h3>4. Validador de Dados de Usuário</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Construir uma função <code>validarUsuario(usuario)</code> que
+                            recebe um
+                            objeto (ex: <code>{ nome: "Ana", email: "ana@email.com", senha: "123" }</code>). A função
+                            deve
+                            verificar
+                            se o nome não está vazio, se o email contém "@" e se a senha tem mais de 6 caracteres. Ela
+                            deve
+                            retornar
+                            <code>true</code> se tudo estiver correto, ou um array com as mensagens de erro caso
+                            contrário.
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Funções, objetos, condicionais (if), operadores
+                            lógicos
+                            (&&,
+                            ||), e propriedades de string (.length, .includes()).</p>
+                    </li>
+                    <li>
+                        <p><strong>Exemplo de Retorno com Erro:</strong>
+                            <code>["Senha precisa ter mais de 6 caracteres."]</code>
+                        </p>
+                    </li>
+                </ul>
+
+
+                <h3>5. Analisador de Números em um Array</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Criar uma função <code>analisarNumeros(arrayDeNumeros)</code> que
+                            recebe
+                            um
+                            array de números e retorna um objeto contendo o maior número, o menor número e a média de
+                            todos os
+                            números do array.</p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Estruturas de repetição (for ou forEach),
+                            condicionais para
+                            encontrar o maior/menor valor, operadores matemáticos para calcular a média e manipulação de
+                            arrays.
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Exemplo de Retorno:</strong> <code>{ maior: 9, menor: 1, media: 5 }</code></p>
+                    </li>
+                </ul>
+
+
+                <h3>6. Conversor de Temperatura</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Escrever duas funções:
+                            <code>celsiusParaFahrenheit(celsius)</code> e
+                            <code>fahrenheitParaCelsius(fahrenheit)</code>. Cada uma deve receber uma temperatura e
+                            retornar o
+                            valor
+                            convertido.
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Criação de funções simples e reutilizáveis, e
+                            aplicação de
+                            fórmulas matemáticas com operadores.</p>
+                    </li>
+                    <li>
+                        <p><strong>Exemplo de Chamada:</strong> <code>console.log(celsiusParaFahrenheit(30))</code></p>
+                    </li>
+                </ul>
+
+
+                <h3>7. Contador de Vogais e Consoantes</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Desenvolver uma função <code>contarLetras(palavra)</code> que
+                            recebe uma
+                            string e retorna um objeto mostrando quantas vogais e quantas consoantes a palavra possui.
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Estruturas de repetição (for...of), manipulação de
+                            strings
+                            (.toLowerCase()), condicionais ou o método .includes() para verificar se uma letra é uma
+                            vogal.</p>
+                    </li>
+                    <li>
+                        <p><strong>Exemplo de Retorno para "Abacaxi":</strong> <code>{ vogais: 4, consoantes: 3 }</code>
+                        </p>
+                    </li>
+                </ul>
+
+
+                <h3>8. Gerador de Códigos de Cupom</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Criar uma função <code>gerarCupom(tamanho)</code> que gera um
+                            código
+                            alfanumérico aleatório com o tamanho especificado. O código deve ser uma string.</p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Funções, estruturas de repetição (for),
+                            <code>Math.random()</code> e manipulação de strings ou arrays para selecionar caracteres
+                            aleatórios
+                            de
+                            um conjunto pré-definido (ex: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789).
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Exemplo de Retorno para gerarCupom(8):</strong> <code>"X7B3K9P2"</code></p>
+                    </li>
+                </ul>
+
+
+                <h3>9. Localizador da Maior Palavra</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Construir uma função <code>encontrarMaiorPalavra(frase)</code>
+                            que recebe
+                            uma
+                            frase (string) e retorna a maior palavra contida nela.</p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Manipulação de strings (.split()), estruturas de
+                            repetição
+                            (for...of ou forEach), e condicionais para comparar o tamanho (.length) das palavras.</p>
+                    </li>
+                    <li>
+                        <p><strong>Exemplo de Retorno para "O desenvolvimento de APIs é fundamental":</strong>
+                            <code>"desenvolvimento"</code>
+                        </p>
+                    </li>
+                </ul>
+
+
+                <h3>10. Sorteador de Times (Versão Lógica)</h3>
+                <ul>
+                    <li>
+                        <p><strong>O Desafio:</strong> Criar uma função
+                            <code>sortearTimes(listaDeNomes, numeroDeTimes)</code>
+                            que
+                            recebe um array de nomes e um número. A função deve embaralhar a lista de nomes e retornar
+                            um novo
+                            array
+                            com os times divididos (um array de arrays).
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Conceitos de JS em Foco:</strong> Funções, manipulação avançada de arrays (.sort()
+                            com função
+                            de
+                            comparação para embaralhar, .slice(), .push()), e estruturas de repetição para distribuir os
+                            jogadores.
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>Exemplo de Retorno:</strong> <code>[ ['Ana', 'Carlos'], ['Bia', 'Daniel'] ]</code>
+                        </p>
+                    </li>
+                </ul>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+            <a href="index.html" class="btn-nav">Capítulo anterior</a>
+            <a class="btn-nav inactive-link">Node.js</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

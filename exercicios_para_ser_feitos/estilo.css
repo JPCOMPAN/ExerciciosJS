@@ -1,0 +1,211 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #E0F2F1; /* Light Teal/Mint */
+    color: #263238; /* Dark Grey Blue */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #00796B; /* Deep Teal */
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #B2DFDB; /* Light Teal Grey */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.accordion-button {
+    background-color: #ffffff;
+    color: #00796B; /* Deep Teal */
+    cursor: pointer;
+    padding: 18px 25px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.5em;
+    margin: 0;
+    border-bottom: 1px solid #B2DFDB; /* Light Teal Grey */
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.accordion-button:after {
+    content: '+';
+    font-size: 1.5em;
+    color: #00796B; /* Deep Teal */
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.accordion-button.active:after {
+    content: "-";
+}
+
+.accordion-button:hover {
+    background-color: #F5F5F5; /* Light Grey for hover */
+}
+
+.accordion-content {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+li {
+    margin-bottom: 12px;
+    color: #455A64; /* Medium Grey Blue */
+    padding: 0 10px; /* Added horizontal padding */
+}
+
+ul ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #4DB6AC; /* Medium Teal */
+}
+
+li li {
+    margin-bottom: 8px;
+}
+
+strong {
+    color: #263238; /* Dark Grey Blue */
+}
+
+code {
+    background-color: #F5F5F5; /* Light Grey */
+    color: #00796B; /* Deep Teal */
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.95em;
+}
+
+.btn-nav {
+    display: inline-block;
+    background-color: #00796B; /* Deep Teal */
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: #004D40; /* Darker Teal for hover */
+    transform: translateY(-2px);
+}
+
+/* Light theme for code block */
+.code-example {
+    background-color: #F5F5F5; /* Light Grey */
+    border: 1px solid #B2DFDB; /* Light Teal Grey */
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+.code-example::before {
+    content: "code";
+    display: block;
+    padding: 10px 20px;
+    background-color: #E0F2F1; /* Light Teal/Mint */
+    border-bottom: 1px solid #B2DFDB; /* Light Teal Grey */
+    color: #455A64; /* Medium Grey Blue */
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.code-example pre {
+    background-color: #F5F5F5; /* Match the container background */
+    color: #263238; /* Dark text for readability */
+    padding: 20px;
+    margin: 0;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.95em;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Adjusted token colors for light theme */
+.code-example .token-comment {
+    color: #607D8B; /* Blue Grey */
+}
+
+.code-example .token-keyword {
+    color: #D84315; /* Deep Orange */
+}
+
+.code-example .token-string {
+    color: #388E3C; /* Dark Green */
+}
+
+.code-example .token-number {
+    color: #6A1B9A; /* Dark Purple */
+}
+
+.code-example .token-boolean {
+    color: #6A1B9A; /* Dark Purple */
+}
+
+.code-example .token-function {
+    color: #0277BD; /* Light Blue */
+}
+
+.code-example .token-operator {
+    color: #D84315; /* Deep Orange */
+}
+
+.code-example .token-punctuation {
+    color: #263238; /* Dark Grey Blue */
+}
+
+.code-example .token-variable {
+    color: #0277BD; /* Light Blue */
+}
+
+.code-example .token-constant {
+    color: #C62828; /* Red */
+}
+
+.inactive-link {
+    background-color: #B0BEC5; /* Light Grey Blue */
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none; /* Prevents click events */
+    transform: none; /* Remove hover transform */
+}
+
+.inactive-link:hover {
+    background-color: #B0BEC5; /* Keep the same background on hover */
+    transform: none; /* Ensure no transform on hover */
+}
+
+.accordion-content h3 {
+    margin-top: 25px; /* Adjust as needed */
+}
