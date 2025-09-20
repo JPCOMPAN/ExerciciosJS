@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/exercicios-site/src/css/atividade3.css">
     <title>ExerciciosJS</title>
 </head>
 <body>
+    <h1>Tabuada Dinâmica</h1>
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" value="1" min="1" max="10">
+    <button onclick="gerarTabuada()">Gerar Tabuada</button>
+    <div id="tabuada">
+        <h2>Tabuada:</h2>
+        <ul id="resultado"></ul>
+    </div>
     
 </body>
+
+<script>
+    function gerarTabuada() {
+        const numero = parseInt(document.getElementById('numero').value);
+
+        const resultado = document.getElementById('resultado');
+        resultado.innerHTML = ''; // Limpa resultados anteriores
+
+        if (numero < 1 || numero > 10 || isNaN(numero)) {
+            alert('Por favor, insira um número válido entre 1 e 10.');
+            return;
+        } else {
+            for (let i = 1; i <= 10; i++) {
+            const li = document.createElement('li');
+            li.textContent = `${numero} x ${i} = ${numero * i}`;
+            resultado.appendChild(li);
+        }
+     }   
+    }
+</script>
 </html>
