@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExerciciosJS</title>
+    <title>Exercício 1 - Contagem Regressiva para o Ano Novo</title>
+    <link rel="stylesheet" href="../css/atividade1.css">
 </head>
 <body>
-    
+    <h1>Contagem Regressiva para o Ano Novo</h1>
+
+    <div id="contador"></div>
+    <br>
+    <button onclick="window.location.href='../index.html'">Voltar para o Início</button>
+
+    <script>
+        function calcularTempoParaAnoNovo() {
+            const agora = new Date();
+            const proximoAno = agora.getFullYear() + 1;
+            const anoNovo = new Date(`January 1, ${proximoAno} 00:00:00`);
+            const diffMs = anoNovo - agora;
+
+            const segundosTotais = Math.floor(diffMs / 1000);
+            const dias = Math.floor(segundosTotais / (60 * 60 * 24));
+            const horas = Math.floor((segundosTotais % (60 * 60 * 24)) / (60 * 60));
+            const minutos = Math.floor((segundosTotais % (60 * 60)) / 60);
+            const segundos = segundosTotais % 60;
+
+            return { dias, horas, minutos, segundos };
+        }
+
+        function exibirContagem() {
+            const { dias, horas, minutos, segundos } = calcularTempoParaAnoNovo();
+            const mensagem = `Faltam: ${dias} dias, ${horas} horas, ${minutos} minutos, ${segundos} segundos.`;
+            document.getElementById('contador').textContent = mensagem;
+            console.log(mensagem);
+        }
+
+        setInterval(exibirContagem, 1000);
+        exibirContagem();
+    </script>
 </body>
 </html>

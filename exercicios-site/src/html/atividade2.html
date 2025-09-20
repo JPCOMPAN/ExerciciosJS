@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExerciciosJS</title>
+    <title>Exercício 2 - Calculadora de IMC</title>
+    <link rel="stylesheet" href="../css/atividade2.css">
 </head>
 <body>
-    
+    <h1>Calculadora de IMC</h1>
+    <form id="formIMC" autocomplete="off">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" step="0.1" min="0" required>
+        <br><br>
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" name="altura" step="0.01" min="0" required>
+        <br><br>
+        <button type="submit">Calcular IMC</button>
+    </form>
+    <div id="resultado" style="margin-top: 24px; font-size: 1.2em;"></div>
+    <br>
+    <button onclick="window.location.href='../index.html'">Voltar para o Início</button>
+
+    <script>
+        function calcularIMC(peso, altura) {
+            if (altura <= 0 || peso <= 0) return "Valores inválidos.";
+            const imc = peso / (altura * altura);
+            let classificacao = "";
+
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+            } else if (imc < 25) {
+                classificacao = "Peso normal";
+            } else if (imc < 30) {
+                classificacao = "Sobrepeso";
+            } else if (imc < 35) {
+                classificacao = "Obesidade grau I";
+            } else if (imc < 40) {
+                classificacao = "Obesidade grau II";
+            } else {
+                classificacao = "Obesidade grau III";
+            }
+
+            return `IMC: ${imc.toFixed(2)} - ${classificacao}`;
+        }
+
+        document.getElementById('formIMC').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            const resultado = calcularIMC(peso, altura);
+            document.getElementById('resultado').textContent = resultado;
+            console.log(resultado);
+        });
+    </script>
 </body>
 </html>
