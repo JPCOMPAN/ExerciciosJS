@@ -1,0 +1,120 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #262626; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.container {
+    background-color: #DA291C; 
+    color: #FFFFFF; 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 80%;
+    margin: 20px;
+}
+
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+p {
+    font-size: 1.2em;
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+
+#cupom-gerado {
+    background-color: #FFC72C; 
+    color: #262626; 
+    font-size: 2em;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 5px;
+    margin-top: 20px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.botao {
+    display: inline-block;
+    background-color: #FFC72C;
+    color: #262626; 
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botao:hover {
+    transform: scale(1.05); 
+    background-color: #FFD14A; 
+}
+
+
+.input-container {
+    margin: 20px 0;
+}
+
+#tamanho-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #FFC72C;
+    text-align: center;
+    font-size: 1.2em;
+    width: 80px;
+}
+
+.rodape {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #262626;
+}
+
+.voltar {
+    display: inline-block;
+    background-color: #FFC72C;
+    color: #262626; 
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.voltar:hover {
+    transform: scale(1.05); 
+    background-color: #FFD14A; 
+}
+
+a {
+    text-decoration: none;
+}

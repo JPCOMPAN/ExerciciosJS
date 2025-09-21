@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExerciciosJS</title>
+    <link rel="stylesheet" href="/exercicios-site/src/css/atividade8.css">
+    <title>Gerador de Cupom</title>
 </head>
 <body>
+    <div class="container">
+        <h1>Seu Cupom Mágico!</h1>
+        <p>
+            Digite o tamanho desejado e clique no botão para gerar um código de cupom exclusivo!
+        </p>
+        
+        <div class="input-container">
+            <label for="tamanho-input">Tamanho do Cupom:</label>
+            <input type="number" id="tamanho-input" value="8" min="1" max="30">
+        </div>
+
+        <div id="cupom-gerado">
+            Clique em "Gerar Cupom"
+        </div>
+
+        <button class="botao" onclick="gerarNovoCupom()">Gerar Cupom</button>
+    </div>
+
+    <a href="/exercicios-site/src/index.html">
+        <button class="voltar">Voltar ao início</button>
+    </a>
     
+    <script>
+        function gerarCupom(tamanho) {
+            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let codigo = "";
+            
+            for (let i = 0; i < tamanho; i++) {
+                const indiceAleatorio = Math.floor(Math.random() * caracteres.length);
+                codigo += caracteres.charAt(indiceAleatorio);
+            }
+            
+            return codigo;
+        }
+
+        function gerarNovoCupom() {
+            const tamanhoInput = document.getElementById("tamanho-input");
+            const tamanho = parseInt(tamanhoInput.value); 
+            
+            if (tamanho > 0) { 
+                const cupomDiv = document.getElementById("cupom-gerado");
+                const novoCupom = gerarCupom(tamanho);
+                cupomDiv.textContent = novoCupom;
+            } else {
+                alert("Por favor, digite um número válido para o tamanho.");
+            }
+        }
+    </script>
+
 </body>
 </html>

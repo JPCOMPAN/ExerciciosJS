@@ -3,9 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExerciciosJS</title>
+    <link rel="stylesheet" href="/exercicios-site/src/css/atividade6.css">
+    <title>Conversor de Temperatura</title>
 </head>
 <body>
-    
+
+    <div class="container">
+        <h1>Conversor de Temperatura</h1>
+        <p id="mensagem"></p>
+        <div>
+            <label for="celsiusInput">Celsius:</label>
+            <input type="number" id="celsiusInput">
+            <button onclick="converterParaFahrenheit()">Converter para °F</button>
+        </div>
+        <br>
+        <div>
+            <label for="fahrenheitInput">Fahrenheit:</label>
+            <input type="number" id="fahrenheitInput">
+            <button onclick="converterParaCelsius()">Converter para °C</button>
+        </div>
+    </div>
+
+    <a href="/exercicios-site/src/index.html"><button>Voltar ao início</button></a>
+
+    <script>
+        function celsiusParaFahrenheit(celsius) {
+            return (celsius * 9 / 5) + 32;
+        }
+
+        function fahrenheitParaCelsius(fahrenheit) {
+            return (fahrenheit - 32) * 5 / 9;
+        }
+
+        function atualizarTema(celsius) {
+            const body = document.body;
+            const mensagem = document.getElementById('mensagem');
+            
+            body.classList.remove('quente', 'tranquilo', 'frio');
+            
+            if (celsius > 30) {
+                body.classList.add('quente');
+                mensagem.textContent = `Que calor! O clima está QUENTE.`;
+            } else if (celsius >= 25) {
+                body.classList.add('tranquilo');
+                mensagem.textContent = `O clima está TRANQUILO.`;
+            } else {
+                body.classList.add('frio');
+                mensagem.textContent = `Está frio!`;
+            }
+        }
+
+
+        function converterParaFahrenheit() {
+            const celsiusInput = document.getElementById('celsiusInput');
+            const fahrenheitInput = document.getElementById('fahrenheitInput');
+            const celsius = parseFloat(celsiusInput.value);
+
+            if (!isNaN(celsius)) {
+                const fahrenheit = celsiusParaFahrenheit(celsius);
+                fahrenheitInput.value = fahrenheit.toFixed(2);
+                atualizarTema(celsius);
+            } else {
+                alert("Por favor, insira uma temperatura válida em Celsius.");
+            }
+        }
+
+        function converterParaCelsius() {
+            const celsiusInput = document.getElementById('celsiusInput');
+            const fahrenheitInput = document.getElementById('fahrenheitInput');
+            const fahrenheit = parseFloat(fahrenheitInput.value);
+
+            if (!isNaN(fahrenheit)) {
+                const celsius = fahrenheitParaCelsius(fahrenheit);
+                celsiusInput.value = celsius.toFixed(2);
+                atualizarTema(celsius);
+            } else {
+                alert("Por favor, insira uma temperatura válida em Fahrenheit.");
+            }
+        }
+    </script>
 </body>
 </html>
