@@ -15,6 +15,10 @@
         <h2>Tabuada:</h2>
         <ul id="resultado"></ul>
     </div>
+
+    <a href="/exercicios-site/src/index.html">
+        <button>Voltar ao início</button>
+    </a>
     
 </body>
 
@@ -23,7 +27,7 @@
         const numero = parseInt(document.getElementById('numero').value);
 
         const resultado = document.getElementById('resultado');
-        resultado.innerHTML = ''; // Limpa resultados anteriores
+        resultado.innerHTML = ''; 
 
         if (numero < 1 || numero > 10 || isNaN(numero)) {
             alert('Por favor, insira um número válido entre 1 e 10.');
