@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteio de Times de Futebol</title>
-    <link rel="stylesheet" href="/exercicios-site/src/css/atividade10.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/atividade10.css">
+  <title>Atividade10</title>
 </head>
 <body>
+    <h1>Sorteador de Times</h1>
+    <p>Digite os nomes (um por linha):</p>
+    <textarea id="listaNomes" rows="8" cols="30">Ana
+Bia
+Carlos
+Daniel
+Eduardo
+Fernanda
+Gustavo
+Helena
+    </textarea>
+
+    <p>Número de times: <input id="numTimes" type="number" value="2" min="1"></p>
+    <button id="btnSortear">Sortear</button>    
+    <h2>Resultado:</h2>
+    <div id="resultado"></div>
+
+    
+
+    <script>
+        function sortearTimes(listaDeNomes, numeroDeTimes) {
+
+          if (!Array.isArray(listaDeNomes)) return [];
+          numeroDeTimes = Math.max(1, Math.floor(Number(numeroDeTimes) || 1));
+          const nomes = listaDeNomes.slice();
+
+          for (let i = nomes.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [nomes[i], nomes[j]] = [nomes[j], nomes[i]];
+          }
+
+          const times = Array.from({ length: numeroDeTimes }, () => []);
+
+          for (let i = 0; i < nomes.length; i++) {
+            times[i % numeroDeTimes].push(nomes[i]);
+          }
+
+          return times;
+        }
+
+        function sortear() {
+
+          const texto = document.getElementById("listaNomes").value || "";
+          const nomes = texto.split(/\r?\n/).map(n => n.trim()).filter(Boolean);
+
+          let numeroDeTimes = parseInt(document.getElementById("numTimes").value, 10);
+
+          if (!Number.isInteger(numeroDeTimes) || numeroDeTimes < 1) numeroDeTimes = 1;
+          if (nomes.length === 0) {
+
+            document.getElementById("resultado").innerHTML = "<p>Nenhum nome informado.</p>";
+            return;
+          }
+
+          const times = sortearTimes(nomes, numeroDeTimes);
+
+          let html = "<ul>";
+
+          times.forEach((time, idx) => {
+
+            html += `<li><strong>Time ${idx+1} (${time.length}):</strong> ${time.join(", ") || "(vazio)"}</li>`;
+          });
+
+          html += "</ul>";
+
+          document.getElementById("resultado").innerHTML = html;
+
+          console.log(times);
+        }
+
+        document.getElementById("btnSortear").addEventListener("click", sortear);
+
+    </script>
+    <a href="../index.html"><button id="btnVoltar" style="margin-top:20px;">Voltar ao Início</button></a>
 </body>
 </html>
