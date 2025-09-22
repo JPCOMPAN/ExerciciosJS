@@ -1,0 +1,120 @@
+body {
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+    background-color: #f0f7fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#contador {
+    background-color: #fff;
+    color: #333;
+    padding: 32px 44px;
+    border-radius: 12px;
+    box-shadow: 0 0 0 6px #b3e0ff, 0 0 0 12px #ffd966;
+    border: 3px solid #a3c9e2;
+    max-width: 90%;
+    width: 480px;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2.4em;
+    color: #005c99;
+    text-shadow: 2px 2px 0 #ffd966;
+    margin-bottom: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #005c99;
+    border-bottom: 2px solid #ffd966;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #005c99;
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 2px solid #005c99;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 80%;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: #fff;
+    color: #222;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+}
+
+button {
+    background-color: #ffd966;
+    color: #005c99;
+    padding: 10px 20px;
+    border: 2px solid #005c99;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+}
+
+button:hover {
+    background-color: #b3e0ff;
+    color: #222;
+}
+
+#resultado {
+    font-size: 1.3em;
+    color: #005c99;
+    background: #f0f7fa;
+    border-radius: 8px;
+    margin-top: 18px;
+    padding: 12px;
+    border: 1px solid #ffd966;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive, sans-serif;
+}
+
+#alfabeto {
+    margin: 18px 0 10px 0;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 0.15em;
+}
+
+#alfabeto .letra {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0 2px;
+    transition: transform 0.2s;
+}
+
+#alfabeto .vogal {
+    color: #e74c3c;
+}
+#alfabeto .consoante {
+    color: #3498db;
+}
+#alfabeto .letra:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 8px #ffd966;
+}

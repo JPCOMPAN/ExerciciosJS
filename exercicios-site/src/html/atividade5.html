@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/atividade5.css">
     <title>ExerciciosJS</title>
 </head>
 <body>
-    
+    <div id="analisador">
+        <h1>Analisador de Números</h1>
+        <form id="formAnalisador">
+            <label for="numeros">Digite os números (separados por vírgula ou espaço):</label><br>
+            <input type="text" id="numeros" name="numeros" placeholder="Ex: 1, 2, 3, 4" required><br>
+            <button type="submit">Analisar</button>
+        </form>
+        <h2>Resultado</h2>
+        <div id="resultado"></div>
+    </div>
+    <script src="../js/atividade5.js"></script>
 </body>
 </html>
